@@ -1,0 +1,33 @@
+3.3 Narrow Bridge (with Monitor Controller)
+Description
+
+This is a modification of Assignment 2.3 (Narrow Bridge), replacing binary semaphores with a monitor-based synchronization approach.
+
+Testing:
+
+    The existing simulation program from Assignment 2.3 is used to validate the new synchronization method.
+    
+Program Execution
+
+The assignment is compiled using the Makefile provided in the folder.
+
+To run the program, use the command:
+
+./all
+
+Once executed, the program prompts the user to enter five values (3 integers and 2 doubles) in the following order:
+
+    Total number of cars in the program (a)
+    Bridge capacity (maximum number of cars on the bridge) (b)
+    Time interval between the arrival of the next car on the bridge (c)
+    Time required for a car to cross the bridge (d)
+    Maximum number of cars that can pass in one direction before traffic must switch (e)
+
+The input format should be:
+
+<a> <b> <c> <d> <e>
+
+Example input:
+
+20 4 0.5 2.5 6
+

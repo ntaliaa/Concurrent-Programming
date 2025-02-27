@@ -1,0 +1,16 @@
+2.1 Binary Semaphores
+Description
+
+Implementation of a custom binary semaphore library (mysem_t) with the following operations:
+
+    mysem_init(s, n): Initialize a semaphore with value n (0 or 1).
+    mysem_down(s): Decrease semaphore by 1 (block if 0).
+    mysem_up(s): Increase semaphore by 1 (block if already 1).
+    mysem_destroy(s): Destroy the semaphore.
+
+Internal Implementation:
+
+    Uses System V semaphores (assumed fair).
+    Can utilize mutexes for simple mutual exclusion.
+    
+The first assignment consists of the files library.c and library.h. Testing was conducted through the implementation of the subsequent assignments in this series, so no separate test file is included with the library.

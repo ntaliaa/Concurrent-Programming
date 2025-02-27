@@ -1,0 +1,32 @@
+2.3 Narrow Bridge (Traffic Synchronization)
+Description
+
+Simulation of a one-lane bridge where vehicles must follow these rules:
+
+    No two vehicles moving in opposite directions can be on the bridge at the same time.
+    Maximum N vehicles can be on the bridge at once.
+    No vehicle should be indefinitely blocked by continuous traffic from the opposite side.
+
+Implementation Details:
+
+    Each vehicle executes entry (enter_bridge) and exit (exit_bridge) functions to synchronize crossing.
+    Vehicles are spawned dynamically from input at different time intervals.
+    Custom binary semaphores ensure synchronization without a central traffic controller thread.
+    
+The program is compiled using the provided Makefile, generating an executable named 'all'. It runs with ./all and prompts the user to enter five values (three integers and two doubles) in the following order:
+
+    Total number of cars in the simulation (a)
+    Bridge capacity (b)
+    Time interval for the arrival of the next car (c)
+    Time required for a car to cross the bridge (d)
+    Maximum number of cars that can pass in one direction before traffic switches (e)
+
+The values should be entered as: <a> <b> <c> <d> <e>
+Example input: 20 4 0.5 2.5 6
+
+Print Colors:
+
+    Red: Cars arriving from the left.
+    Blue: Cars arriving from the right.
+    Yellow: Direction change and explanation.
+    White: Entry and exit of cars on the bridge.

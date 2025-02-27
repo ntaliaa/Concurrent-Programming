@@ -1,0 +1,6 @@
+3.1 Binary Semaphores (with Monitor Controller)
+Description
+
+This assignment involves implementing binary semaphores with a monitor-based synchronization mechanism instead of directly relying on system-level semaphores.
+The first assignment consists of the files library.c and library.h. Testing was conducted through the other assignments in Assignment Series 2, which are included along with the library. The Makefile compiles the cars file by default; if a different file needs to be compiled, its name must be modified in the Makefile accordingly.
+

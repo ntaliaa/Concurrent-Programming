@@ -1,0 +1,15 @@
+Primality Tester (Multi-threaded)
+
+Description:
+A parallelized program that reads integers from input and determines if each number is prime. The program utilizes N worker threads to speed up primality testing.
+
+    The main thread reads input and assigns numbers to available workers.
+    Each worker thread processes numbers independently and returns the result (1 = prime, 0 = not prime).
+Analysis:
+
+    Performance is analyzed based on N (number of threads) and input values.
+    Execution is tested with both small and large prime numbers.
+Testing:
+
+The program is compiled using gcc -Wall -g prime.c -o prime -lpthread -lm -fsanitize=address and executed with ./prime <number of threads> <numbers to check>, where the numbers are separated by spaces. A sample file, test_file.txt, containing 100 numbers from 100 to 10,000, was used for testing. The main thread acts as the master, assigning tasks to the first available worker. Print statements confirm concurrency: purple output indicates when a worker is assigned a number, while green output shows when a worker completes processing and prints Prime or Not Prime. Tasks are neither assigned nor completed in sequential order.
+

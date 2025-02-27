@@ -1,0 +1,24 @@
+3.4 Roller Coaster (with Monitor Controller)
+Description
+
+This is a modification of Assignment 2.4 (Roller Coaster Simulation), where the synchronization is now handled using a monitor instead of binary semaphores.
+
+Implementation Details:
+
+    Uses mutexes and condition variables (pthread in C) or synchronized methods and wait/notify (Java).
+    The simulation follows the same behavior as in 2.4, ensuring passengers board and exit correctly.
+    
+Program Execution
+
+The assignment is compiled using make with the Makefile provided in the folder.
+
+To run the program, use the command:
+
+./all <capacity> <number_of_passengers> <ride_duration> <passenger_arrival_interval>
+
+where:
+
+    capacity: Maximum number of passengers the train can hold.
+    number_of_passengers: Total passenger threads created in the program.
+    ride_duration: Time taken for the train to complete one ride.
+    passenger_arrival_interval: Time interval between the creation of each passenger.

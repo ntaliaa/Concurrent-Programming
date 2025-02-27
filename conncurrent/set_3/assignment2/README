@@ -1,0 +1,33 @@
+3.2 Multi-threaded Primality Test (with Monitor Controller)
+Description
+
+This is a modification of Assignment 2.2 (Primality Test) where the synchronization logic is now implemented using a monitor instead of binary semaphores.
+
+Implementation Details:
+
+    No binary semaphores from 3.1 are used.
+    Uses mutexes and condition variables (C pthreads) or Java synchronized methods and wait/notify for synchronization.
+    
+The code is compiled using the command:
+
+make
+
+Execution
+
+The program runs with the command:
+
+./all <number of threads> <numbers to check>
+
+where <numbers to check> are all the numbers the user wants to verify as prime, separated by spaces.
+
+A sample file numbers.txt, containing 50 numbers ranging from 50,000 to 10,000,000, was provided for testing.
+Testing
+
+The main thread acts as the master thread, assigning tasks to worker threads, always selecting the first available worker.
+
+To confirm concurrent execution, print statements were used:
+
+    Printed when workers become available and are assigned a number.
+    Printed when a worker completes processing and displays the result (Prime or Not Prime).
+
+Observations show that tasks are not assigned sequentially to the workers, nor do they necessarily finish in the order they were assigned.

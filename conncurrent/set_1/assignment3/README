@@ -1,0 +1,15 @@
+External Mergesort (Parallelized)
+
+Description:
+This is a parallelized external mergesort implementation using pthreads.
+
+    Each recursive level splits the file, spawns two threads for sorting each part, and merges them.
+    Dynamic thread creation ensures efficient resource utilization.
+    If a partition has ≤ 64 integers, it is sorted in-memory.
+
+Constraints:
+
+    No pthread synchronization primitives are used.
+    No atomic operations – synchronization is handled with busy waiting and shared variables.
+    
+The program is compiled using gcc -Wall -g mergesort.c -o mergesort -lpthread -lm -fsanitize=address and executed with ./mergesort <binary_filename.bin>, where the binary file contains the integers to be sorted. To verify correctness, the sorted output is printed after execution. For testing, a Python script was used to generate binary files with random integers within a specified range. In the mergesort implementation, the merge operation occurs after child threads execute quicksort (for leaf nodes) or merge with their sibling node (for non-leaf threads). Print statements confirm that some merges complete before certain quicksort executions finish, demonstrating concurrent execution. This behavior is especially noticeable in cases with over 1000 integers.

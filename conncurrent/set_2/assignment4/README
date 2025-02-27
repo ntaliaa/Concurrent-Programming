@@ -1,0 +1,30 @@
+2.4 Roller Coaster Simulation
+Description
+
+A simulation of a roller coaster ride in an amusement park, where:
+
+    The coaster holds N passengers and starts only when full.
+    Passengers board and exit in a synchronized manner.
+    The ride duration is simulated using artificial delays.
+
+Implementation Constraints:
+
+    Synchronization is handled only with custom binary semaphores.
+    No helper threads – the roller coaster and passengers act as independent threads.
+    Passengers are spawned dynamically based on input parameters.
+    
+The program is compiled using make with the provided Makefile, generating an executable named 'all'. It runs with the command:
+./all <capacity> <number_of_passengers> <ride_duration> <passenger_arrival_interval>
+where:
+
+    capacity: Maximum number of passengers the train can hold.
+    number_of_passengers: Total passenger threads created in the program.
+    ride_duration: Time taken for the train to complete one ride.
+    passenger_arrival_interval: Time interval between the creation of each passenger.
+
+Print Colors:
+
+    Green: Passenger enters the train.
+    Red: Passenger exits the train.
+    Blue: Train status and ride information.
+    White: Other messages.

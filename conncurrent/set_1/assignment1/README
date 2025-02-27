@@ -1,0 +1,9 @@
+FIFO Pipes
+Description:
+This assignment involves implementing a single-direction FIFO pipe library for inter-thread communication. The pipe supports:
+
+    Opening (pipe_open), writing (pipe_write), closing (pipe_writeDone), and reading (pipe_read) operations.
+    A ring buffer structure for efficient data transfer between threads.
+
+Testing:
+The test file should be named input, and the program is compiled using make, with fsanitize=address for leak checking and -lpthread for linking the pthread library. It runs with ./main 64, where 64 is the buffer size. To verify correctness, the files input, input.copy, and input.copy2 must be identical, checked using diff. Print statements with yellow for write operations and green for read operations confirmed concurrent execution. The program was tested with various file sizes (12B, 200B, 10KB), demonstrating that characters are correctly written, and read/write operations alternate in a non-linear order across different runs.
